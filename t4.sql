@@ -1,0 +1,380 @@
+CREATE DATABASE company_db1;
+
+USE company_db1;
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(100) NOT NULL,
+    department VARCHAR(50),
+    salary DECIMAL(10,2),
+    city VARCHAR(50),
+    joining_date DATE,
+    email VARCHAR(100) NULL,
+    status VARCHAR(20)
+);
+
+INSERT INTO employees
+(employee_id, employee_name, department, salary, city, joining_date, email, status)
+VALUES
+(101, 'Amit Sharma', 'IT', 55000, 'Pune', '2024-06-15', 'amit.sharma@company.com', 'Active'),
+(102, 'Priya Sharma', 'HR', 42000, 'Mumbai', '2025-02-10', 'priya.sharma@company.com', 'Active'),
+(103, 'Rahul Verma', 'Sales', 48000, 'Pune', '2025-04-20', 'rahul.verma@company.com', 'Active'),
+(104, 'Sneha Patil', 'Testing', 39000, 'Nashik', '2024-11-12', NULL, 'Active'),
+(105, 'Rohit Joshi', 'IT', 65000, 'Mumbai', '2025-01-15', 'rohit.joshi@company.com', 'Active'),
+(106, 'Anjali Deshmukh', 'Finance', 47000, 'Pune', '2025-06-05', 'anjali.d@company.com', 'Active'),
+(107, 'Suresh Patil', 'Support', 32000, 'Nagpur', '2023-09-18', NULL, 'Inactive'),
+(108, 'Neha Kulkarni', 'IT', 72000, 'Pune', '2026-01-05', 'neha.k@company.com', 'Active'),
+(109, 'Vikas More', 'Sales', 36000, 'Mumbai', '2025-08-22', 'vikas.more@company.com', 'Active'),
+(110, 'Pooja Shah', 'HR', 35000, 'Pune', '2024-03-11', NULL, 'Inactive'),
+(111, 'Akash Gupta', 'IT', 58000, 'Nashik', '2026-02-14', 'akash.g@company.com', 'Active'),
+(112, 'Kiran Pawar', 'Testing', 41000, 'Mumbai', '2025-05-19', 'kiran.p@company.com', 'Inactive'),
+(113, 'Riya Singh', 'Sales', 52000, 'Pune', '2026-03-10', 'riya.singh@company.com', 'Active'),
+(114, 'Manish Yadav', 'Support', 30000, 'Mumbai', '2024-07-25', NULL, 'Active'),
+(115, 'Ayesha Khan', 'HR', 45000, 'Nagpur', '2025-07-01', 'ayesha.k@company.com', 'Active'),
+(116, 'Sachin Jadhav', 'IT', 68000, 'Pune', '2025-11-20', 'sachin.j@company.com', 'Active'),
+(117, 'Ramesh Thakur', 'Sales', 29000, 'Nashik', '2023-12-15', NULL, 'Inactive'),
+(118, 'Swati Joshi', 'Testing', 38000, 'Pune', '2026-01-20', 'swati.j@company.com', 'Active'),
+(119, 'Raj Malhotra', 'IT', 80000, 'Mumbai', '2024-10-10', 'raj.m@company.com', 'Active'),
+(120, 'Shreya Kulkarni', 'HR', 51000, 'Pune', '2025-03-15', 'shreya.k@company.com', 'Active'),
+(121, 'Arjun Mehta', 'Sales', 62000, 'Mumbai', '2026-02-01', 'arjun.m@company.com', 'Active'),
+(122, 'Rashmi Patil', 'Finance', 44000, 'Nashik', '2025-09-12', NULL, 'Active'),
+(123, 'Sanjay More', 'Support', 28000, 'Pune', '2024-01-25', 'sanjay.m@company.com', 'Inactive'),
+(124, 'Pallavi Rao', 'IT', 95000, 'Mumbai', '2026-04-05', 'pallavi.r@company.com', 'Active'),
+(125, 'Rohan Desai', 'Sales', 54000, 'Pune', '2025-12-10', 'rohan.d@company.com', 'Active'),
+(126, 'Aarti Shinde', 'HR', 39000, 'Nagpur', '2026-05-15', NULL, 'Active'),
+(127, 'Vivek Joshi', 'Testing', 46000, 'Mumbai', '2025-10-05', 'vivek.j@company.com', 'Active'),
+(128, 'Simran Kaur', 'IT', 61000, 'Pune', '2024-08-19', 'simran.k@company.com', 'Inactive'),
+(129, 'Shubham Gupta', 'Sales', 43000, 'Nashik', '2026-06-01', 'shubham.g@company.com', 'Active'),
+(130, 'Ritu Sharma', 'HR', 37000, 'Pune', '2025-06-20', 'ritu.s@company.com', 'Active');
+
+SELECT * FROM employees;
+
+-- Task 1
+SELECT *
+FROM employees
+WHERE city = 'Pune';
+
+-- Task 2
+SELECT *
+FROM employees
+WHERE city = 'Mumbai';
+
+-- Task 3
+SELECT *
+FROM employees
+WHERE department = 'IT';
+
+-- Task 4
+SELECT *
+FROM employees
+WHERE department = 'HR';
+
+-- Task 5
+SELECT *
+FROM employees
+WHERE department = 'Sales';
+
+-- Task 6
+SELECT *
+FROM employees
+WHERE status = 'Active';
+
+-- Task 7
+SELECT *
+FROM employees
+WHERE status = 'Inactive';
+
+-- Task 8
+SELECT *
+FROM employees
+WHERE employee_id = 103;
+
+-- Task 9
+SELECT *
+FROM employees
+WHERE employee_name = 'Priya Sharma';
+
+-- Task 10
+SELECT *
+FROM employees
+WHERE salary = 35000;
+
+-- Task 11
+SELECT *
+FROM employees
+WHERE city != 'Pune';
+
+-- Task 12
+SELECT *
+FROM employees
+WHERE department <> 'Testing';
+
+-- Task 13
+SELECT *
+FROM employees
+WHERE salary > 40000;
+
+-- Task 14
+SELECT *
+FROM employees
+WHERE salary < 35000;
+
+-- Task 15
+SELECT *
+FROM employees
+WHERE salary >= 50000;
+
+-- Task 16
+SELECT *
+FROM employees
+WHERE salary <= 30000;
+
+-- Task 17
+SELECT *
+FROM employees
+WHERE joining_date > '2025-01-01';
+
+-- Task 18
+SELECT *
+FROM employees
+WHERE joining_date <= '2024-12-31';
+
+-- Task 19
+SELECT *
+FROM employees
+WHERE employee_id > 110;
+
+-- Task 20
+SELECT employee_name, joining_date
+FROM employees
+WHERE joining_date >= '2026-01-01';
+
+-- Task 21
+SELECT *
+FROM employees
+WHERE city = 'Pune'
+AND status = 'Active';
+
+-- Task 22
+SELECT *
+FROM employees
+WHERE department = 'IT'
+AND salary > 50000;
+
+-- Task 23
+SELECT *
+FROM employees
+WHERE city = 'Mumbai'
+AND status = 'Inactive';
+
+-- Task 24
+SELECT *
+FROM employees
+WHERE department = 'Sales'
+AND city = 'Pune'
+AND salary >= 42000;
+
+-- Task 25
+SELECT *
+FROM employees
+WHERE department = 'HR'
+AND joining_date > '2025-06-01';
+
+-- Task 26
+SELECT *
+FROM employees
+WHERE status = 'Active'
+AND salary >= 40000
+AND salary <= 70000;
+
+-- Task 27
+SELECT *
+FROM employees
+WHERE city = 'Mumbai'
+AND department = 'Testing'
+AND salary > 38000;
+
+-- Task 28
+SELECT *
+FROM employees
+WHERE status = 'Active'
+AND joining_date >= '2026-01-01'
+AND salary > 45000;
+
+-- Task 29
+SELECT *
+FROM employees
+WHERE city = 'Pune'
+OR city = 'Mumbai';
+
+-- Task 30
+SELECT *
+FROM employees
+WHERE department = 'IT'
+OR department = 'HR';
+
+-- Task 31
+SELECT *
+FROM employees
+WHERE salary < 32000
+OR salary > 60000;
+
+-- Task 32
+SELECT *
+FROM employees
+WHERE city = 'Nashik'
+OR salary > 55000;
+
+-- Task 33
+SELECT *
+FROM employees
+WHERE NOT department = 'HR';
+
+-- Task 34
+SELECT *
+FROM employees
+WHERE NOT status = 'Inactive';
+
+-- Task 35
+SELECT *
+FROM employees
+WHERE (city = 'Pune' OR city = 'Mumbai')
+AND status = 'Active';
+
+-- Task 36
+SELECT *
+FROM employees
+WHERE city <> 'Pune'
+AND salary > 40000;
+
+-- Task 37
+SELECT *
+FROM employees
+WHERE salary BETWEEN 35000 AND 55000;
+
+-- Task 38
+SELECT *
+FROM employees
+WHERE salary NOT BETWEEN 40000 AND 65000;
+
+-- Task 39
+SELECT *
+FROM employees
+WHERE joining_date BETWEEN '2025-01-01' AND '2025-12-31';
+
+-- Task 40
+SELECT *
+FROM employees
+WHERE employee_id BETWEEN 105 AND 115;
+
+-- Task 41
+SELECT *
+FROM employees
+WHERE department IN ('IT', 'HR', 'Sales');
+
+-- Task 42
+SELECT *
+FROM employees
+WHERE city IN ('Pune', 'Mumbai', 'Nagpur');
+
+-- Task 43
+SELECT *
+FROM employees
+WHERE department NOT IN ('Testing', 'Support');
+
+-- Task 44
+SELECT *
+FROM employees
+WHERE city NOT IN ('Mumbai', 'Nashik');
+
+-- Task 45
+SELECT *
+FROM employees
+WHERE employee_id IN (101, 105, 110, 115, 120);
+
+-- Task 46
+SELECT *
+FROM employees
+WHERE department IN ('IT', 'Sales')
+AND salary BETWEEN 45000 AND 75000;
+
+-- Task 47
+SELECT *
+FROM employees
+WHERE employee_name LIKE 'A%';
+
+-- Task 48
+SELECT *
+FROM employees
+WHERE employee_name LIKE 'R%';
+
+-- Task 49
+SELECT *
+FROM employees
+WHERE employee_name LIKE '%a';
+
+-- Task 50
+SELECT *
+FROM employees
+WHERE employee_name LIKE '%sh%';
+
+-- Task 51
+SELECT *
+FROM employees
+WHERE employee_name LIKE 'P%a';
+
+-- Task 52
+SELECT *
+FROM employees
+WHERE employee_name LIKE '_____';
+
+-- Task 53
+SELECT *
+FROM employees
+WHERE employee_name LIKE '_a%';
+
+-- Task 54
+SELECT *
+FROM employees
+WHERE employee_name NOT LIKE 'R%';
+
+-- Task 55
+SELECT *
+FROM employees
+WHERE email IS NULL;
+
+-- Task 56
+SELECT *
+FROM employees
+WHERE email IS NOT NULL;
+
+-- Task 57
+SELECT *
+FROM employees
+WHERE city = 'Pune'
+AND email IS NULL;
+
+-- Task 58
+SELECT *
+FROM employees
+WHERE status = 'Active'
+AND email IS NOT NULL
+AND salary > 40000;
+
+-- Task 59
+SELECT *
+FROM employees
+WHERE status = 'Active'
+AND city IN ('Pune', 'Mumbai')
+AND department IN ('IT', 'Sales')
+AND salary BETWEEN 40000 AND 70000
+AND joining_date > '2025-01-01';
+
+-- Task 60
+SELECT *
+FROM employees
+WHERE (employee_name LIKE 'S%' OR employee_name LIKE 'R%')
+AND email IS NOT NULL
+AND status = 'Active'
+AND city IN ('Pune', 'Nashik');
+
